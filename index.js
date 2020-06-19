@@ -119,12 +119,35 @@ console.log(newlist);
      }
  }
 
- const myTeachers = new teachers(["Stacy", "Raju", "Levine"], 3);
- myTeachers.sayTeachers();
+ //const myTeachers = new teachers(["Stacy", "Raju", "Levine"], 3);
+// myTeachers.sayTeachers();
 
 
  //inheritance we use extends
 
- 
+ class product extends teachers {
+    constructor(items, no, amount, cost) {
+        super(items, no);
+        this.amount = amount;
+        this.cost = cost;
+    }
+ }
+
+ const Product = new product(["maize, millet, oats"], 4, 3, 15);
+
+ product.sayTeachers();
+  
+//promises ...operation that is to finish in future
+
+const prom = new Promise((resolve,reject) => {
+    setTimeout(() => {
+        resolve(new Error('something went wrong'));
+    }, 2000);
+});
+
+prom.then(data => {
+    console.log(result);
+})
+.catch(err => console.log(err))
 
 
